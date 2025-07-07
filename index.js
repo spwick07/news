@@ -4,6 +4,9 @@ const NodeCache = require('node-cache');
 const app = express();
 const parser = new Parser();
 const cache = new NodeCache({ stdTTL: 300 }); // cache for 5 minutes
+const cors = require('cors');
+app.use(cors());
+
 
 const feeds = {
   world: 'https://rss.nytimes.com/services/xml/rss/nyt/World.xml',
